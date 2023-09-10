@@ -1,16 +1,22 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Login from "./LoginSignup";
 
 describe("LoginSignup 컴포넌트 테스트", () => {
-    it("Login test", () => {
-        render(<Login />);
-        const linkElement = screen.getByText(/login/i);
-        expect(linkElement).toBeInTheDocument();
-    });
+    render(<Login />);
 
-    it("Signup test", () => {
-        render(<Login />);
-        const linkElement = screen.getByText(/signup/i);
-        expect(linkElement).toBeInTheDocument();
+    it("Login <-> Signup change test", () => {
+        // to Signup
+        const signup = screen.getByRole("button", { name: "회원가입하기" });
+        expect(signup).toBeEnabled();
+        fireEvent.click(signup);
+        const signupElement = screen.getByText(/signup/i);
+        expect(signupElement).toBeInTheDocument();
+
+        // to Login
+        const login = screen.getByRole("button", { name: "로그인하기" });
+        expect(login).toBeEnabled();
+        fireEvent.click(login);
+        const loginElement = screen.getByText(/login/i);
+        expect(loginElement).toBeInTheDocument();
     });
 });
