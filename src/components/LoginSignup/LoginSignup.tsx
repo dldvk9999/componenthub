@@ -1,15 +1,17 @@
 import { useState } from "react";
 import "./LoginSignup.scss";
 
+type LoginState = "Signin" | "Signup";
+
 function LoginSignup() {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [password2, setPassword2] = useState<string>("");
-    const [nowState, setState] = useState<"Login" | "Signup">("Login");
+    const [nowState, setState] = useState<LoginState>("Signin");
     const [validationState, setValidationState] = useState<boolean>(false);
 
     // state Change 함수
-    const changeState = (state: "Login" | "Signup") => {
+    const changeState = (state: LoginState) => {
         setState(state);
         setValidationState(false);
         setEmail("");
@@ -19,7 +21,7 @@ function LoginSignup() {
 
     // 입력값 validation Check
     const validationCheck = () => {
-        if (nowState === "Login") {
+        if (nowState === "Signin") {
             if (!email || !password) {
                 alert("이메일이나 비밀번호를 입력하세요.");
                 setValidationState(true);
@@ -39,10 +41,10 @@ function LoginSignup() {
     return (
         <section className="App LoginSignupContainer">
             <div className="LoginSignup">
-                <div className="login">
-                    {nowState === "Login" ? (
+                <div className="signin">
+                    {nowState === "Signin" ? (
                         <>
-                            <h2>Login</h2>
+                            <h2>SignIn</h2>
                             <input
                                 id="email"
                                 type="email"
@@ -62,7 +64,7 @@ function LoginSignup() {
                             <button onClick={validationCheck}>로그인</button>
                         </>
                     ) : (
-                        <button onClick={() => changeState("Login")}>로그인하기</button>
+                        <button onClick={() => changeState("Signin")}>로그인하기</button>
                     )}
                 </div>
                 <div className="singup">

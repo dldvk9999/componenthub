@@ -12,7 +12,7 @@
 }
 
 .singup,
-.login {
+.signin {
     @include view(flex, center, center);
     flex-direction: column;
     gap: 1rem;
