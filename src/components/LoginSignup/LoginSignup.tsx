@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./Login.scss";
+import "./LoginSignup.scss";
 
-function Login() {
+function LoginSignup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
@@ -13,7 +13,7 @@ function Login() {
                 <input
                     id="email"
                     type="email"
-                    placeholder="아이디를 입력해주세요"
+                    placeholder="이메일을 입력해주세요"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                 />
@@ -31,7 +31,7 @@ function Login() {
                 <input
                     id="id"
                     type="email"
-                    placeholder="아이디를 입력해주세요"
+                    placeholder="이메일을 입력해주세요"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                 />
@@ -56,4 +56,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default LoginSignup;
