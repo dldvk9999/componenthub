@@ -23,3 +23,11 @@ button {
         border: 2px solid $purple;
     }
 }
+
+button {
+    background-color: $none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    &:hover {
+        @include bcolor($purple, white);
+    }
+}
