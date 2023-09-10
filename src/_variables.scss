@@ -7,7 +7,11 @@ $none: #e4f1ff;
 @media (prefers-color-scheme: light) {
     * {
         --box-shadow: lightgray;
-        --background-color: $none;
+        --background-color: #e4f1ff;
+        --convert-background-color: #161f27;
+        --color: black;
+        --convert-color: #945aff;
+        --light-gray: #7091f5;
     }
 }
 
@@ -15,5 +19,9 @@ $none: #e4f1ff;
     * {
         --box-shadow: gray;
         --background-color: #161f27;
+        --convert-background-color: #e4f1ff;
+        --color: white;
+        --convert-color: #945aff;
+        --light-gray: #793fdf;
     }
 }
