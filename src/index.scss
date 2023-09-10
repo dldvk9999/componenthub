@@ -33,6 +33,7 @@ button {
     transition: background-color 0.3s ease, color 0.3s ease;
     height: 2.5rem;
     font-weight: 700;
+    cursor: pointer;
     &:hover {
         @include bcolor($purple, white);
     }

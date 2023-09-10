@@ -1,3 +1,5 @@
+$move-background-image: 24rem;
+
 .LoginSignupContainer {
     @include view(flex, center, center);
     height: 100vh;
@@ -5,18 +7,39 @@
 
 .LoginSignup {
     @include view(flex, center, center);
-    height: 300px;
+    height: 400px;
+    box-shadow: 10px 10px 14px 1px $box-shadow;
+    border-radius: 10px;
 }
 
 .signup,
 .signin {
     @include view(flex, center, center);
-    @include area(25rem, 100%);
-    box-shadow: 10px 10px 14px 1px $box-shadow;
-    flex-direction: column;
+    @include area($move-background-image, 100%);
+    flex-direction: row;
     gap: 1rem;
-    padding: 2rem 2rem 3rem;
-    transition: all 0.5s ease;
+    overflow: hidden;
+    transition: all 1s ease;
+
+    & > * {
+        transition: all 1s ease;
+    }
+
+    & > div {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+
+        & > button {
+            min-width: 20rem;
+        }
+
+        & > div > h2 {
+            font-weight: 700;
+            color: $navy;
+            -webkit-text-stroke: 0.5px white;
+        }
+    }
 }
 
 .signin {
@@ -24,8 +47,23 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px 0 0 10px;
+
+    & > div {
+        transform: translateX(-11rem);
+
+        & > div {
+            @include view(flex, center);
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+
     &.hidden {
-        background-position-x: -500%;
+        background-position-x: $move-background-image;
+
+        & > div {
+            transform: translateX(12rem);
+        }
     }
 }
 
@@ -34,7 +72,23 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 0 10px 10px 0;
+    background-position-x: -16rem;
+
+    & > div {
+        transform: translateX(11rem);
+
+        & > div {
+            @include view(flex, center);
+            flex-direction: column;
+            gap: 1rem;
+        }
+    }
+
     &.hidden {
-        background-position-x: 500%;
+        background-position-x: -$move-background-image + -17rem;
+
+        & > div {
+            transform: translateX(-12rem);
+        }
     }
 }

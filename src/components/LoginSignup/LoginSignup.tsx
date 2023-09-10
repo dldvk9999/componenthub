@@ -42,8 +42,9 @@ function LoginSignup() {
         <section className="App LoginSignupContainer">
             <div className="LoginSignup">
                 <div className={`signin ${nowState === "Signin" ? "" : "hidden"}`}>
-                    {nowState === "Signin" ? (
-                        <>
+                    <div>
+                        <button onClick={() => changeState("Signin")}>로그인하기</button>
+                        <div>
                             <h2>SignIn</h2>
                             <input
                                 id="email"
@@ -62,14 +63,12 @@ function LoginSignup() {
                                 value={password}
                             />
                             <button onClick={validationCheck}>로그인</button>
-                        </>
-                    ) : (
-                        <button onClick={() => changeState("Signin")}>로그인하기</button>
-                    )}
+                        </div>
+                    </div>
                 </div>
                 <div className={`signup ${nowState === "Signup" ? "" : "hidden"}`}>
-                    {nowState === "Signup" ? (
-                        <>
+                    <div>
+                        <div>
                             <h2>SignUp</h2>
                             <input
                                 id="id"
@@ -96,10 +95,9 @@ function LoginSignup() {
                                 value={password2}
                             />
                             <button onClick={validationCheck}>회원가입</button>
-                        </>
-                    ) : (
+                        </div>
                         <button onClick={() => changeState("Signup")}>회원가입하기</button>
-                    )}
+                    </div>
                 </div>
             </div>
         </section>
