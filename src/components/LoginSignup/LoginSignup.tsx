@@ -6,6 +6,35 @@ function LoginSignup() {
     const [password, setPassword] = useState<string>("");
     const [password2, setPassword2] = useState<string>("");
     const [nowState, setState] = useState<"Login" | "Signup">("Login");
+    const [validationState, setValidationState] = useState<boolean>(false);
+
+    // state Change 함수
+    const changeState = (state: "Login" | "Signup") => {
+        setState(state);
+        setValidationState(false);
+        setEmail("");
+        setPassword("");
+        setPassword2("");
+    };
+
+    // 입력값 validation Check
+    const validationCheck = () => {
+        if (nowState === "Login") {
+            if (!email || !password) {
+                alert("이메일이나 비밀번호를 입력하세요.");
+                setValidationState(true);
+            } else {
+                alert("로그인 테스트 성공");
+            }
+        } else {
+            if (!email || !password || !password2) {
+                alert("이메일이나 비밀번호를 입력하세요.");
+                setValidationState(true);
+            } else {
+                alert("회원가입 테스트 성공");
+            }
+        }
+    };
 
     return (
         <section className="App LoginSignupContainer">
@@ -18,6 +47,7 @@ function LoginSignup() {
                                 id="email"
                                 type="email"
                                 placeholder="이메일을 입력해주세요"
+                                className={validationState && !email ? "error" : ""}
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
                             />
@@ -25,13 +55,14 @@ function LoginSignup() {
                                 id="password"
                                 type="password"
                                 placeholder="비밀번호를 입력해주세요"
+                                className={validationState && !password ? "error" : ""}
                                 onChange={(e) => setPassword(e.target.value)}
                                 value={password}
                             />
-                            <button>로그인</button>
+                            <button onClick={validationCheck}>로그인</button>
                         </>
                     ) : (
-                        <button onClick={() => setState("Login")}>로그인하기</button>
+                        <button onClick={() => changeState("Login")}>로그인하기</button>
                     )}
                 </div>
                 <div className="singup">
@@ -42,6 +73,7 @@ function LoginSignup() {
                                 id="id"
                                 type="email"
                                 placeholder="이메일을 입력해주세요"
+                                className={validationState && !email ? "error" : ""}
                                 onChange={(e) => setEmail(e.target.value)}
                                 value={email}
                             />
@@ -49,6 +81,7 @@ function LoginSignup() {
                                 id="password"
                                 type="password"
                                 placeholder="비밀번호를 입력해주세요"
+                                className={validationState && !password ? "error" : ""}
                                 onChange={(e) => setPassword(e.target.value)}
                                 value={password}
                             />
@@ -56,13 +89,14 @@ function LoginSignup() {
                                 id="password"
                                 type="password"
                                 placeholder="비밀번호를 다시 입력해주세요"
+                                className={validationState && !password2 ? "error" : ""}
                                 onChange={(e) => setPassword2(e.target.value)}
                                 value={password2}
                             />
-                            <button>회원가입</button>
+                            <button onClick={validationCheck}>회원가입</button>
                         </>
                     ) : (
-                        <button onClick={() => setState("Signup")}>회원가입하기</button>
+                        <button onClick={() => changeState("Signup")}>회원가입하기</button>
                     )}
                 </div>
             </div>
