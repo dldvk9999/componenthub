@@ -3,4 +3,17 @@ $purple: #945aff;
 $blue: #aed2ff;
 $red: #ff3fa4;
 $none: #e4f1ff;
-$box-shadow: lightgray;
+
+@media (prefers-color-scheme: light) {
+    * {
+        --box-shadow: lightgray;
+        --background-color: $none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        --box-shadow: gray;
+        --background-color: #161f27;
+    }
+}

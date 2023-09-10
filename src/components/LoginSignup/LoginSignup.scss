@@ -8,7 +8,7 @@ $move-background-image: 24rem;
 .LoginSignup {
     @include view(flex, center, center);
     height: 400px;
-    box-shadow: 10px 10px 14px 1px $box-shadow;
+    box-shadow: 10px 10px 14px 1px var(--box-shadow);
     border-radius: 10px;
 }
 

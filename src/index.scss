@@ -1,3 +1,7 @@
+* {
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -36,5 +40,19 @@ button {
     cursor: pointer;
     &:hover {
         @include bcolor($purple, white);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+        color: white;
+    }
+    body {
+        background-color: var(--background-color);
+    }
+    input,
+    button {
+        background-color: var(--background-color);
+        border-color: lightgray;
     }
 }
