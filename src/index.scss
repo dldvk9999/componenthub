@@ -24,9 +24,15 @@ button {
     }
 }
 
+input.error {
+    border: 2px solid $red;
+}
+
 button {
     background-color: $none;
     transition: background-color 0.3s ease, color 0.3s ease;
+    height: 2.5rem;
+    font-weight: 700;
     &:hover {
         @include bcolor($purple, white);
     }
