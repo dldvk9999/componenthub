@@ -3,8 +3,12 @@ import "./Header.scss";
 export default function Header() {
     return (
         <header className="Header">
-            <a href="/">Home</a>
-            <a href="/login">Login</a>
+            <div className="HeaderLeft">
+                <a href="/">Home</a>
+            </div>
+            <div className="HeaderRight">
+                <a href="/login">Login</a>
+            </div>
         </header>
     );
 }
