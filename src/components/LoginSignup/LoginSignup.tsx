@@ -41,7 +41,7 @@ function LoginSignup() {
     return (
         <section className="App LoginSignupContainer">
             <div className="LoginSignup">
-                <div className="signin">
+                <div className={`signin ${nowState === "Signin" ? "" : "hidden"}`}>
                     {nowState === "Signin" ? (
                         <>
                             <h2>SignIn</h2>
@@ -67,7 +67,7 @@ function LoginSignup() {
                         <button onClick={() => changeState("Signin")}>로그인하기</button>
                     )}
                 </div>
-                <div className="signup">
+                <div className={`signup ${nowState === "Signup" ? "" : "hidden"}`}>
                     {nowState === "Signup" ? (
                         <>
                             <h2>SignUp</h2>

@@ -16,7 +16,7 @@ describe("LoginSignup 컴포넌트 테스트", () => {
         const login = screen.getByRole("button", { name: "로그인하기" });
         expect(login).toBeEnabled();
         fireEvent.click(login);
-        const loginElement = screen.getByText(/login/i);
+        const loginElement = screen.getByText(/signin/i);
         expect(loginElement).toBeInTheDocument();
     });
 });
