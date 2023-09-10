@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/Login.scss";
+import "./Login.scss";
 
 function Login() {
     const [id, setId] = useState("");
