@@ -67,7 +67,7 @@ function LoginSignup() {
                         <button onClick={() => changeState("Signin")}>로그인하기</button>
                     )}
                 </div>
-                <div className="singup">
+                <div className="signup">
                     {nowState === "Signup" ? (
                         <>
                             <h2>SignUp</h2>
