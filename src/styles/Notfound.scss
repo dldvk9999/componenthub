@@ -1,0 +1,5 @@
+.notfound {
+    @include area(100vw, 100vh);
+    @include view(flex, center, center);
+    font-size: 2rem;
+}
