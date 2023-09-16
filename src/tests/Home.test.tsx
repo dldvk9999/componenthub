@@ -4,6 +4,6 @@ import Home from "../pages/Home";
 
 it("Home test", () => {
     render(<Home />);
-    const linkElement = screen.getByText(/learn react/i);
+    const linkElement = screen.getByText(/COMPONENTHUB/i);
     expect(linkElement).toBeInTheDocument();
 });
