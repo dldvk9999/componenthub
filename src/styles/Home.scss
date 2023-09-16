@@ -2,6 +2,7 @@
     text-align: center;
 }
 
+// Header
 .Home-header {
     @include view(flex, center, center);
     background-color: var(--light-gray);
@@ -22,9 +23,68 @@
     }
 }
 
-.Home-footer {
-    @include area(100vw, 5rem);
+// Main
+.Home-cards {
     @include view(flex, center, center);
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin: 3rem;
+}
+
+.Home-card {
+    @include area(17rem, 30rem);
+    @include view(flex, conter, center);
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0px 10px 26px -11px lightgray;
+    transition: scale 0.5s ease;
+    cursor: pointer;
+
+    & > img {
+        @include area(100%, 100%);
+    }
+
+    & > .Home-card-text {
+        padding: 1rem 1.5rem;
+
+        & * {
+            color: black;
+        }
+
+        & > .Home-card-text-title {
+            overflow-x: hidden;
+            white-space: nowrap;
+        }
+
+        & > .Home-card-text-desc {
+            color: gray;
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+
+    &:hover {
+        scale: 1.05;
+
+        & > .Home-card-text > .Home-card-text-title > h2 {
+            @include animation(infinity_scroll 11s linear 0s infinite);
+        }
+    }
+}
+
+.Home-loading {
+    height: 5rem;
+    font-size: 2rem;
+}
+
+// Footer
+.Home-footer {
+    @include area(auto, 3rem);
+    @include view(flex, center, center);
+    border-top: 1px solid var(--color);
     padding: 2rem 0;
 
     & > a {

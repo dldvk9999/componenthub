@@ -4,7 +4,7 @@
     justify-content: $justify-content;
 }
 
-@mixin area($width, $height) {
+@mixin area($width, $height: auto) {
     width: $width;
     height: $height;
 }
@@ -52,5 +52,20 @@
     100% {
         opacity: 1;
         transform: translateX(0px);
+    }
+}
+
+@include keyframe(infinity_scroll) {
+    0% {
+        transform: translateX(0px);
+    }
+    15% {
+        transform: translateX(0px);
+    }
+    85% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(-200%);
     }
 }
