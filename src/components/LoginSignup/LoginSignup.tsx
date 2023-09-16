@@ -39,7 +39,7 @@ function LoginSignup() {
     };
 
     return (
-        <section className="App LoginSignupContainer">
+        <section className="LoginSignupContainer">
             <div className="LoginSignup">
                 <div className={`signin ${nowState === "Signin" ? "" : "hidden"}`}>
                     <div>
