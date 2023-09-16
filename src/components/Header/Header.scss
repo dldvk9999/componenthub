@@ -27,3 +27,10 @@
         }
     }
 }
+
+@media (max-width: 340px) {
+    .HeaderLeft,
+    .HeaderRight {
+        padding: 0.5rem 0;
+    }
+}
