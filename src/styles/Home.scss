@@ -1,9 +1,9 @@
-.App {
+.Home {
     text-align: center;
     background-color: var(--light-gray);
 }
 
-.App-header {
+.Home-header {
     @include view(flex, center, center);
     flex-direction: column;
     min-height: 50vh;
@@ -11,8 +11,13 @@
     padding: 2rem 0;
 
     & > h1 {
+        @include animation(fade_in_up_to_down 1s ease-in-out);
         text-transform: uppercase;
         font-size: 8rem;
         margin: 1rem 0;
+    }
+
+    & > i {
+        @include animation(fade_in_left_to_right 2s ease-in-out);
     }
 }

@@ -18,3 +18,39 @@
     border: $border;
     border-radius: $border-radius;
 }
+
+@mixin animation($str) {
+    animation: #{$str};
+}
+
+@mixin keyframe($animation_name) {
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@include keyframe(fade_in_up_to_down) {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@include keyframe(fade_in_left_to_right) {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
