@@ -1,14 +1,7 @@
 {
     "dldvk9999": {
-        "Header": {
-            "id": 1,
-            "image": "/login/signin.jpeg",
-            "title": "Simple Header",
-            "contents": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptas odit odioaccusamus autem ducimus itaque earum. Quia est aut, facilis fugit saepe blanditiis sequiexercitationem, maxime necessitatibus ab laudantium.",
-            "github": ""
-        },
         "LoginSignup": {
-            "id": 2,
+            "id": 1,
             "image": "/login/signin.jpeg",
             "title": "Slide Login/Signup",
             "contents": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptas odit odioaccusamus autem ducimus itaque earum. Quia est aut, facilis fugit saepe blanditiis sequiexercitationem, maxime necessitatibus ab laudantium.",
