@@ -54,6 +54,10 @@
         & > .Home-card-text-title {
             overflow-x: hidden;
             white-space: nowrap;
+
+            & > h2 {
+                display: inline-block;
+            }
         }
 
         & > .Home-card-text-desc {
@@ -69,7 +73,7 @@
     &:hover {
         scale: 1.05;
 
-        & > .Home-card-text > .Home-card-text-title > h2 {
+        & * > .long > h2 {
             @include animation(infinity_scroll 11s linear 0s infinite);
         }
     }

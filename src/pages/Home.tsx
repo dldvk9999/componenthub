@@ -24,7 +24,11 @@ function Home() {
                             alt={`${maker} component`}
                         />
                         <div className="Home-card-text">
-                            <div className="Home-card-text-title">
+                            <div
+                                className={`Home-card-text-title ${
+                                    components[maker][component].title.length > 20 ? "long" : ""
+                                }`}
+                            >
                                 <h2>{components[maker][component].title}</h2>
                             </div>
                             <p className="Home-card-text-desc">{components[maker][component].contents}</p>
