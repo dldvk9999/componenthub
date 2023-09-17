@@ -3,36 +3,41 @@ import { useInView } from "react-intersection-observer";
 import { v4 as uuidv4 } from "uuid";
 import "../styles/Home.scss";
 import { JSX } from "react/jsx-runtime";
+import mock from "../mock/components.json";
+import { componentsType } from "../types/components";
 
 function Home() {
     const [ref, inView] = useInView();
     const [cards, setCards] = useState<Array<JSX.Element>>([]);
     const [isLoading, setLoading] = useState<boolean>(true);
+    const [components] = useState<componentsType>(mock);
 
+    // 컴포넌트 카드 생성
     const cardInit = useCallback(() => {
         const result: JSX.Element[] = [];
-        for (let i = 0; i < 10; i++) {
-            result.push(
-                <div className="Home-card" key={uuidv4()}>
-                    <img src={process.env.PUBLIC_URL + "/login/signin.jpeg"} alt="test" />
-                    <div className="Home-card-text">
-                        <div className="Home-card-text-title">
-                            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        for (const maker in components) {
+            for (const component in components[maker]) {
+                result.push(
+                    <a className="Home-card" href={`/${maker}/${component}`} key={uuidv4()}>
+                        <img
+                            src={`${process.env.PUBLIC_URL}${components[maker][component].image}`}
+                            alt={`${maker} component`}
+                        />
+                        <div className="Home-card-text">
+                            <div className="Home-card-text-title">
+                                <h2>{components[maker][component].title}</h2>
+                            </div>
+                            <p className="Home-card-text-desc">{components[maker][component].contents}</p>
+                            <p className="Home-card-text-maker">
+                                code by <i>{maker}</i>
+                            </p>
                         </div>
-                        <p className="Home-card-text-desc">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptas odit odio
-                            accusamus autem ducimus itaque earum. Quia est aut, facilis fugit saepe blanditiis sequi
-                            exercitationem, maxime necessitatibus ab laudantium.
-                        </p>
-                        <p className="Home-card-text-maker">
-                            code by <i>maker</i>
-                        </p>
-                    </div>
-                </div>
-            );
+                    </a>
+                );
+            }
         }
         setCards((card) => [...card, ...result]);
-    }, []);
+    }, [components]);
 
     // loading이 화면에 보일때는 감지해서 무한 스크롤
     useEffect(() => {
@@ -42,8 +47,8 @@ function Home() {
 
     // 카드가 100개 이상이면 중지
     useEffect(() => {
-        if (cards.length >= 100) setLoading(false);
-    }, [cards]);
+        if (cards.length >= Object.keys(components).length) setLoading(false);
+    }, [cards, components]);
 
     return (
         <section className="Home">
