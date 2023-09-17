@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Home from "./pages/Home";
 import LoginSignup from "./components/dldvk9999/LoginSignup/LoginSignup";
 import Header from "./components/dldvk9999/Header/Header";
+import Footer from "./components/dldvk9999/Footer/Footer";
 import NotFound from "./pages/Notfound";
 import mock from "./mock/components.json";
 import { componentsType } from "./types/components";
@@ -40,6 +41,7 @@ export default function Router() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
+            <Footer />
         </>
     );
 }

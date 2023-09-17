@@ -79,17 +79,3 @@
     height: 5rem;
     font-size: 2rem;
 }
-
-// Footer
-.Home-footer {
-    @include area(auto, 3rem);
-    @include view(flex, center, center);
-    border-top: 1px solid var(--color);
-    padding: 2rem 0;
-
-    & > a {
-        margin: 0 0.5rem;
-        text-decoration: none;
-        font-weight: 700;
-    }
-}
