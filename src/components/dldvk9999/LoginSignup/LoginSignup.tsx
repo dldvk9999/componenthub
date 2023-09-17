@@ -4,7 +4,7 @@ import "./LoginSignup.scss";
 type LoginState = "Signin" | "Signup";
 
 function LoginSignup() {
-    const [email, setEmail] = useState<string>("");
+    const [id, setId] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [password2, setPassword2] = useState<string>("");
     const [nowState, setState] = useState<LoginState>("Signin");
@@ -14,7 +14,7 @@ function LoginSignup() {
     const changeState = (state: LoginState) => {
         setState(state);
         setValidationState(false);
-        setEmail("");
+        setId("");
         setPassword("");
         setPassword2("");
     };
@@ -22,15 +22,15 @@ function LoginSignup() {
     // 입력값 validation Check
     const validationCheck = () => {
         if (nowState === "Signin") {
-            if (!email || !password) {
-                alert("이메일이나 비밀번호를 입력하세요.");
+            if (!id || !password) {
+                alert("아이디나 비밀번호를 입력하세요.");
                 setValidationState(true);
             } else {
                 alert("로그인 테스트 성공");
             }
         } else {
-            if (!email || !password || !password2) {
-                alert("이메일이나 비밀번호를 입력하세요.");
+            if (!id || !password || !password2) {
+                alert("아이디나 비밀번호를 입력하세요.");
                 setValidationState(true);
             } else {
                 alert("회원가입 테스트 성공");
@@ -49,10 +49,10 @@ function LoginSignup() {
                             <input
                                 id="email"
                                 type="email"
-                                placeholder="이메일을 입력해주세요"
-                                className={validationState && !email ? "error" : ""}
-                                onChange={(e) => setEmail(e.target.value)}
-                                value={email}
+                                placeholder="아이디를 입력해주세요"
+                                className={validationState && !id ? "error" : ""}
+                                onChange={(e) => setId(e.target.value)}
+                                value={id}
                             />
                             <input
                                 id="password"
@@ -73,10 +73,10 @@ function LoginSignup() {
                             <input
                                 id="id"
                                 type="email"
-                                placeholder="이메일을 입력해주세요"
-                                className={validationState && !email ? "error" : ""}
-                                onChange={(e) => setEmail(e.target.value)}
-                                value={email}
+                                placeholder="아이디를 입력해주세요"
+                                className={validationState && !id ? "error" : ""}
+                                onChange={(e) => setId(e.target.value)}
+                                value={id}
                             />
                             <input
                                 id="password"
