@@ -18,7 +18,11 @@ export default function Router() {
                     const DynamicComponent = comp.default;
                     setCustomRoutes((routes) => [
                         ...routes,
-                        <Route path={`/${maker}/${component}`} element={<DynamicComponent />} />,
+                        <Route
+                            path={`/${maker}/${component}`}
+                            element={<DynamicComponent />}
+                            key={components[maker][component].id}
+                        />,
                     ]);
                 });
             }
