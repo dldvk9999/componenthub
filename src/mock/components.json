@@ -2,8 +2,15 @@
     "dldvk9999": {
         "LoginSignup": {
             "id": 1,
-            "image": "/login/signin.jpeg",
+            "image": "/sample.jpeg",
             "title": "Slide Login/Signup",
+            "contents": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptas odit odioaccusamus autem ducimus itaque earum. Quia est aut, facilis fugit saepe blanditiis sequiexercitationem, maxime necessitatibus ab laudantium.",
+            "github": ""
+        },
+        "Navigation": {
+            "id": 2,
+            "image": "/sample.jpeg",
+            "title": "Navigation",
             "contents": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit voluptas odit odioaccusamus autem ducimus itaque earum. Quia est aut, facilis fugit saepe blanditiis sequiexercitationem, maxime necessitatibus ab laudantium.",
             "github": ""
         }

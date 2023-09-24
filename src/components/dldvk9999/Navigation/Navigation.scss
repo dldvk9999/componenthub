@@ -1,0 +1,10 @@
+.Navigation {
+    @include view(flex, center, center);
+    flex-direction: column;
+    height: 100vh;
+}
+
+.NavigationSub {
+    @include view(flex, center, center);
+    flex-direction: column;
+}
