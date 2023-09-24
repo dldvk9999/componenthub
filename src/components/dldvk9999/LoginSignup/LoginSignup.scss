@@ -43,7 +43,7 @@ $move-background-image: 24rem;
 }
 
 .signin {
-    background-image: url("../../../../public/Login/signin.jpeg");
+    background-image: url("./Data/signin.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px 0 0 10px;
@@ -68,7 +68,7 @@ $move-background-image: 24rem;
 }
 
 .signup {
-    background-image: url("../../../../public/Login/signup.jpeg");
+    background-image: url("./Data/signup.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 0 10px 10px 0;
