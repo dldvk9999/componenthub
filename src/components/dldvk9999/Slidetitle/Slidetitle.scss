@@ -1,0 +1,111 @@
+.slidetitleIntro {
+    @include view(flex, center, center);
+    @include area(100vw, 100vh);
+    min-height: 10rem;
+    gap: 1rem;
+    align-items: center;
+    transition: height 0.7s ease-in-out, padding-top 0.7s ease-in-out;
+}
+
+.slidetitleIntroBackground {
+    position: fixed;
+    @include area(100vw, 100vh);
+    z-index: -1;
+    & > * {
+        position: fixed;
+        @include area(100vw, 2000rem);
+        background-image: linear-gradient(90deg, transparent, var(--main-shadow-color), transparent);
+        transform: translate(-50%, -54%) rotate(30deg);
+    }
+}
+.slidetitleIntroBackground1 {
+    transition: transform 0.7s ease-in-out;
+}
+.slidetitleIntroBackgroundActive > .slidetitleIntroBackground1 {
+    transform: translate(max(350vw, 1300px), -54%) rotate(30deg);
+}
+
+.slidetitleIntroSub {
+    @include view(flex, flex-start);
+    flex-direction: column;
+    line-height: 4rem;
+    font-size: 2rem;
+
+    * {
+        margin: 0;
+    }
+    h1 {
+        font-weight: 700;
+        word-break: keep-all;
+    }
+}
+
+.slidetitleIntroImage,
+.slidetitleIntroP,
+.slidetitleIntroH1 {
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.slidetitleIntroImage {
+    transform: translateX(-10%);
+}
+.slidetitleIntroImageInvert {
+    filter: invert(1);
+}
+.slidetitleIntroP {
+    transform: translateY(10%);
+    span {
+        color: var(--red);
+    }
+}
+.slidetitleIntroH1 {
+    transform: translateY(-10%);
+    span {
+        color: var(--blue);
+    }
+}
+
+@for $i from 1 through 3 {
+    .slidetitleShow#{$i} {
+        opacity: 1;
+        transform: if(#{$i} == 1, translateX(0%), translateY(0%));
+    }
+}
+
+@media (max-width: 650px) {
+    .slidetitleIntroImage {
+        @include area(7.5rem, 7.5rem);
+    }
+    .slidetitleIntroP {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    .slidetitleIntroH1 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .slidetitleInto {
+        flex-direction: column;
+    }
+    .slidetitleIntroImage {
+        @include area(6rem, 6rem);
+    }
+    .slidetitleIntroP {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .slidetitleIntroH1 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .slidetitleIntroH1 {
+        font-size: 1.2rem;
+    }
+}
